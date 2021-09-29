@@ -22,10 +22,15 @@ module.exports = function (app) {
             res.render('Dashboard/dashboard-crypto');
       });
 
+      // app.get('/', isUserAllowed, function (req, res) {
+      //       res.locals = { title: 'Dashboard Default' };
+      //       res.render('Dashboard/index');
+      // });
+
       app.get('/', isUserAllowed, function (req, res) {
-            res.locals = { title: 'Dashboard Default' };
-            res.render('Dashboard/index');
-      });
+            res.locals = { title: 'aiavocat.ro' };
+            res.render('Crypto/crypto-lending');
+      });      
 
       // Layouts
       app.get('/layouts-horizontal', isUserAllowed, function (req, res) {
