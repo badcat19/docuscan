@@ -1,12 +1,12 @@
 {
-  "name": "skotenode",
+  "name": "docuscan",
   "version": "1.0.0",
   "description": "Skote Node js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "DIGITROM SERV",
   "license": "ISC",
   "dependencies": {
     "assert": "^2.0.0",
@@ -29,5 +29,12 @@
     "path": "^0.12.7",
     "req-flash": "0.0.3"
   },
-  "repository": {}
+  "repository": {},
+  "keywords": [
+    "document",
+    "scan",
+    "OCR",
+    "PDF",
+    "parser"
+  ]
 }
