@@ -21,11 +21,17 @@ mock.onGet("/users", { params: { searchText: "John" } }).reply(200, {
 
 module.exports = function (app) {
 
+  app.get('/', function (req, res) {
+    res.locals = { title: 'Crypto Ico Landing' };
+    res.render('Crypto/crypto-ico-landing');
+  });
+
   // Inner Auth
   app.get('/auth-login', function (req, res) {
     res.locals = { title: 'Auth login' };
     res.render('AuthInner/auth-login');
   });
+
   app.get('/auth-register', function (req, res) {
     res.locals = { title: 'Auth Register' };
     res.render('AuthInner/auth-register');

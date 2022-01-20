@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var urlencodeParser = bodyParser.urlencoded({ extended: false });
 var validator = require('express-validator');
+const formidable = require('formidable');
 
 module.exports = function (app) {
 
@@ -12,6 +13,7 @@ module.exports = function (app) {
             }
             else { res.redirect('/login'); }
       }
+
       app.get('/dashboard-saas', isUserAllowed, function (req, res) {
             res.locals = { title: 'Dashboard Saas' };
             res.render('Dashboard/dashboard-saas');
@@ -22,15 +24,30 @@ module.exports = function (app) {
             res.render('Dashboard/dashboard-crypto');
       });
 
+      app.get('/upload', isUserAllowed, function (req, res) {
+            res.locals = { title: 'Upload documente' };
+            res.render('Ejust/uploadoc');
+      });
+
+      app.post('/api/uploadFile', function (req, res) {
+            const form = new formidable.IncomingForm();
+            form.parse(req, function(err, fields, files){
+  
+                  var oldPath = files.profilePic.path;
+                  var newPath = path.join(__dirname, 'uploads') + '/'+files.profilePic.name;
+                  var rawData = fs.readFileSync(oldPath);
+                
+                  fs.writeFile(newPath, rawData, function(err){
+                      if(err) console.log(err);
+                      res.end('{"success" : "Uploaded document", "status" : 200}');
+                  })
+            });
+      });
+
       // app.get('/', isUserAllowed, function (req, res) {
       //       res.locals = { title: 'Dashboard Default' };
       //       res.render('Dashboard/index');
-      // });
-
-      app.get('/', isUserAllowed, function (req, res) {
-            res.locals = { title: 'aiavocat.ro' };
-            res.render('Crypto/crypto-lending');
-      });      
+      // });  
 
       // Layouts
       app.get('/layouts-horizontal', isUserAllowed, function (req, res) {
