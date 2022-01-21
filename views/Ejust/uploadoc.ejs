@@ -1,0 +1,335 @@
+<%- contentFor('HeaderCss') %>
+<link rel="stylesheet" href="public/assets/libs/twitter-bootstrap-wizard/prettify.css">
+<!-- dropzone css -->
+<link href="public/assets/libs/dropzone/min/dropzone.min.css" rel="stylesheet" type="text/css" />
+<!-- ejust css -->
+<link rel="stylesheet" href="public/css/ejust.css">
+<%- contentFor('breadcrumb') %>
+<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex align-items-center justify-content-between">
+            <h4 class="mb-0 font-size-18">Incarca document nou</h4>
+        </div>
+    </div>
+</div>
+<!-- end page title -->
+
+<%- contentFor('body') %>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">Formular incarcare document</h4>
+
+                <div id="progrss-wizard" class="twitter-bs-wizard">
+                    <ul class="twitter-bs-wizard-nav nav-justified">
+                        <li class="nav-item">
+                            <a href="#progress-user-details" class="nav-link" data-toggle="tab">
+                                <span class="step-number mr-2">01</span>
+                                Tip Persoană
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#progress-company-document" class="nav-link" data-toggle="tab">
+                                <span class="step-number mr-2">02</span>
+                                Document
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#progress-bank-detail" class="nav-link" data-toggle="tab">
+                                <span class="step-number mr-2">03</span>
+                                Mandat
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#progress-confirmation" class="nav-link" data-toggle="tab">
+                                <span class="step-number mr-2">04</span>
+                                Confirmare
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div id="bar" class="progress mt-4">
+                        <div class="progress-bar bg-success progress-bar-striped progress-bar-animated">
+                        </div>
+                    </div>
+                    <div class="tab-content twitter-bs-wizard-tab-content">
+                        <div class="tab-pane" id="progress-user-details">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Selectați tipul persoanei</label>
+                                        <div class="row">
+                                            <div
+                                                class="custom-control custom-radio custom-control-inline mb-3 ml-3 mr-3">
+                                                <input class="custom-control-input" type="radio"
+                                                    name="person" id="person" value="person" checked>
+                                                <label class="custom-control-label mr-4" for="person"><i
+                                                        class="bx bx-male font-size-20 align-top mr-1"></i>
+                                                    Persoană fizică
+                                                </label>
+                                            </div>
+                                            <div
+                                                class="custom-control custom-radio custom-control-inline mb-3">
+                                                <input class="custom-control-input" type="radio"
+                                                    name="person" id="juridic" value="juridic">
+
+                                                <label class="custom-control-label mr-4" for="juridic"><i
+                                                        class="bx bx-briefcase font-size-20 align-top mr-1"></i>
+                                                    Persoană juridică
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="person">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-firstname-input">Nume</label>
+                                                <input type="text" class="form-control"
+                                                    id="basicpill-name-input" placeholder="ex. Popescu Cristian">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-lastname-input">Cod Numeric Personal (CNP)</label>
+                                                <input type="text" class="form-control"
+                                                    id="basicpill-cnp-input">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-phoneno-input">Telefon</label>
+                                                <input type="text" class="form-control"
+                                                    id="basicpill-phoneno-input" placeholder="ex. 0731001992">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-email-input">Email</label>
+                                                <input type="email" class="form-control"
+                                                    id="basicpill-email-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label for="basicpill-address-input">Adresă</label>
+                                                <textarea id="basicpill-address-input" class="form-control"
+                                                    rows="2"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="juridic">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-firstname-input">Nume Firmă</label>
+                                                <input type="text" class="form-control"
+                                                    id="basicpill-juridicname-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-lastname-input">Euro ID</label>
+                                                <input type="text" class="form-control"
+                                                    id="basicpill-euroid-input">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-firstname-input">Cod Identificare Fiscală (CIF)</label>
+                                                <input type="text" class="form-control"
+                                                    id="basicpill-cif-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-lastname-input">Număr Registrul Comerțului (CUI)</label>
+                                                <input type="text" class="form-control"
+                                                    id="basicpill-cui-input">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-phoneno-input">Telefon</label>
+                                                <input type="text" class="form-control"
+                                                    id="basicpill-phoneno-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-email-input">Email</label>
+                                                <input type="email" class="form-control"
+                                                    id="basicpill-email-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label for="basicpill-address-input">Adresa</label>
+                                                <textarea id="basicpill-address-input" class="form-control"
+                                                    rows="2"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label for="basicpill-address-input">Banca</label>
+                                                <textarea id="basicpill-bank-input" class="form-control"
+                                                    rows="2"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="progress-company-document">
+                            <div>
+                                <div class="row mb-4">
+                                    <label class="col-form-label col-lg-2">Fișiere atașate</label>
+                                    <div class="col-lg-10">
+                                        <form action="public/assets/files" method="post" class="dropzone">
+                                            <div class="fallback">
+                                                <input name="file" type="file" id="file" multiple />
+                                            </div>
+
+                                            <div class="dz-message needsclick">
+                                                <div class="mb-3">
+                                                    <i class="display-4 text-muted bx bxs-cloud-upload"></i>
+                                                </div>
+
+                                                <h4>Trage fișierele aici sau apasă pentru upload.</h4>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="progress-bank-detail">
+                            <div>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-namecard-input">Name on Card</label>
+                                                <input type="text" class="form-control"
+                                                    id="basicpill-namecard-input">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Credit Card Type</label>
+                                                <select class="custom-select">
+                                                    <option selected>Select Card Type</option>
+                                                    <option value="AE">American Express</option>
+                                                    <option value="VI">Visa</option>
+                                                    <option value="MC">MasterCard</option>
+                                                    <option value="DI">Discover</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-cardno-input">Credit Card
+                                                    Number</label>
+                                                <input type="text" class="form-control"
+                                                    id="basicpill-cardno-input">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-card-verification-input">Card
+                                                    Verification
+                                                    Number</label>
+                                                <input type="text" class="form-control"
+                                                    id="basicpill-card-verification-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-expiration-input">Expiration
+                                                    Date</label>
+                                                <input type="text" class="form-control"
+                                                    id="basicpill-expiration-input">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="progress-confirmation">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-6">
+                                    <div class="text-center">
+                                        <div class="mb-4">
+                                            <i
+                                                class="mdi mdi-check-circle-outline text-success display-4"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Confirmă Detailiile</h5>
+                                            <p class="text-muted">Apasă butonul de confirmare pentru a
+                                                verifica documentele și pentru a trece la ultimul pas.</p>
+                                            <button type="button"
+                                                class="btn btn-success btn-rounded waves-effect waves-light w-lg mt-10" id="upload-document">Verifică</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="pager wizard twitter-bs-wizard-pager-link">
+                        <li class="previous"><a href="#">Înapoi</a></li>
+                        <li class="next"><a href="javascript::void(0)">Înainte</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+
+</div> <!-- container-fluid -->
+</div>
+<!-- End Page-content -->
+
+
+<%- contentFor('FooterJs') %>
+<!-- twitter-bootstrap-wizard js -->
+<script src="public/assets/libs/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+<script src="public/assets/libs/twitter-bootstrap-wizard/prettify.js"></script>
+<!-- form wizard init -->
+<script src="public/assets/js/pages/form-wizard.init.js"></script>
+<!-- dropzone plugin -->
+<script src="public/assets/libs/dropzone/min/dropzone.min.js"></script>
+<!-- ejust scripts -->
+<script src="public/assets/libs/ejust/person.js"></script>
+<script src="public/assets/libs/ejust/upload.js"></script>
+<%- contentFor('BottomJs') %>
